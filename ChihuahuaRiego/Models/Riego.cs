@@ -8,6 +8,6 @@ namespace ChihuahuaRiego.Models
     public class Riego
     {
         public int RiegoTipo { get; set; }
-        public DateTime Fecha { get; set; }
+        public string Fecha { get; set; }
     }
 }
