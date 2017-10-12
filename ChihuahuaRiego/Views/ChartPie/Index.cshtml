@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutNavbar.cshtml";
+}
+<div class="container body-content" style="padding-top: 50px;">
+    <h2>Index</h2>
+    <h4>Display pie chart using Highcharts in Asp.net C#</h4>
+    <button id="btnCreatePieChart">Show </button>
+    <br />
+    <div>
+        <div id="container" style="width: 500px; height: 500px"></div>
+    </div>
+
+    <script>
+        function drawPieChart(seriesData) {
+
+            $('#container').highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: 'Population percentage city wise'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                            style: {
+                                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                            }
+                        }
+                    }
+                },
+                series: [{
+                    name: "Brands",
+                    colorByPoint: true,
+                    data: seriesData
+                }]
+            });
+        }
+
+        $("#btnCreatePieChart").on('click', function (e) {
+
+            $.ajax({
+                url: '/ChartPie/getRiego',
+                type: 'GET',
+                success: OnSuccess_,
+                error: OnErrorCall_
+            });
+
+            function OnSuccess_(response) {
+                var aData = response.d;
+                var arr = []
+
+                $.map(aData, function (item, index) {
+                    var i = [item.city_name, item.population];
+                    var obj = {};
+                    obj.name = item.city_name;
+                    obj.y = item.population;
+                    arr.push(obj);
+                });
+                var myJsonString = JSON.stringify(arr);
+                var jsonArray = JSON.parse(JSON.stringify(arr));
+
+                drawPieChart(jsonArray);
+
+            }
+            function OnErrorCall_(response) {
+                alert("Whoops something went wrong!");
+            }
+            e.preventDefault();
+        });
+    </script>
+    
+</div>
