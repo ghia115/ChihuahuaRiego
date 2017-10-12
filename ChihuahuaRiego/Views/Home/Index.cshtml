@@ -2,30 +2,320 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<div class="loader"></div>
+<div id="myDiv">
+    <!--HEADER-->
+    <div class="header">
+        <div class="bg-color">
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+            <div class="wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="banner-info text-center wow fadeIn delay-05s">
+                            <h1 class="bnr-title">App para la consulta de riego en el man<span>zano</span> y maíz</h1>
+                            <h2 class="bnr-sub-title">¡Programa tu riego!</h2>
+                            <div class="brn-btn">
+                                <a href="#" class="btn btn-download">Descargala en android! <i class="fa fa-android" aria-hidden="true"></i></a>
+                                <a href="#" class="btn btn-more">Descargala en iOS! <i class="fa fa-apple" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="overlay-detail">
+                                <a href="#feature"><i class="fa fa-angle-down"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <!--/ HEADER-->
+    <!---->
+    <!---->
+    <section id="service" class="section-padding wow fadeInUp delay-05s">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="service-title pad-bt15">¿En qué me podría ayudar esta app?</h2>
+                    <p class="sub-title pad-bt15">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore magna
+                        aliqua.
+                    </p>
+                    <hr class="bottom-line">
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="service-item">
+                        <h3><span>D</span>iseño fácil de manejar</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua.
+                        </p>
+                        <a href="">learn more...</a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="service-item">
+                        <h3><span>A</span>poyo paso a paso en el riego de su predio</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua.
+                        </p>
+                        <a href="">learn more...</a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="service-item">
+                        <h3><span>T</span>e mantiene informado sobre tu parcela</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua.
+                        </p>
+                        <a href="">learn more...</a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="service-item">
+                        <h3><span>P</span>rograma tus riegos</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua.
+                        </p>
+                        <a href="#" data-toggle="modal" data-target="#modal1" style="font-size: 12px;">Leer más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="modal fade" id="modal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Riego de parcela</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="img/riego.jpg">
+                        </div>
+                        <div class="col-md-8">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quidem consectetur quam, repellat iusto voluptatibus
+                                a quibusdam molestias unde quisquam necessitatibus illum, voluptatem eaque placeat libero nesciunt, debitis atque cumque!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+
+    <!---->
+    <!---->
+    <!---->
+    <section id="testimonial" class="wow fadeInUp delay-05s">
+        <div class="bg-testicolor">
+            <div class="container section-padding">
+                <div class="row">
+                    <div class="testimonial-item">
+                        <ul class="bxslider">
+                            <li>
+                                <blockquote>
+                                    <img src="img/thumb.png" class="img-responsive">
+                                    <p>
+                                        Come a day there won't be room for naughty men like us to slip about at all. This job goes south, there well may
+                                        not be another.
+                                    </p>
+                                </blockquote>
+                                <small>Shaun Paul, Client</small>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <img src="img/thumb.png" class="img-responsive">
+                                    <p>So here is us, on the raggedy edge. Don't push me, and I won't push you. </p>
+                                </blockquote>
+                                <small>Marry Smith, Client</small>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <img src="img/thumb.png" class="img-responsive">
+                                    <p>
+                                        Come a day there won't be room for naughty men like us to slip about at all. This job goes south, there well may
+                                        not be another.
+                                    </p>
+                                </blockquote>
+                                <small>Vivek Singh, Client</small>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <img src="img/thumb.png" class="img-responsive">
+                                    <p>So here is us, on the raggedy edge. Don't push me, and I won't push you.</p>
+                                </blockquote>
+                                <small>John Doe, Client</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---->
+    <section id="blog" class="section-padding wow fadeInUp delay-05s">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="service-title pad-bt15">Latest from our blog</h2>
+                    <p class="sub-title pad-bt15">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore magna
+                        aliqua.
+                    </p>
+                    <hr class="bottom-line">
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="blog-sec">
+                        <div class="blog-img">
+                            <a href="">
+                                <img src="img/blog01.jpg" class="img-responsive">
+                            </a>
+                        </div>
+                        <div class="blog-info">
+                            <h2>This is Lorem ipsum heading.</h2>
+                            <div class="blog-comment">
+                                <p>Posted In: <span>Legal Advice</span></p>
+                                <p>
+                                    <span><a href="#"><i class="fa fa-comments"></i></a> 15</span>
+                                    <span><a href="#"><i class="fa fa-eye"></i></a> 11</span>
+                                </p>
+                            </div>
+                            <p>
+                                We cannot expect people to have respect for laws and orders until we teach respect to those we have entrusted to
+                                enforce those laws all the time. we always want to help people cordially.
+                            </p>
+                            <a href="" class="read-more">Read more →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="blog-sec">
+                        <div class="blog-img">
+                            <a href="">
+                                <img src="img/blog02.jpg" class="img-responsive">
+                            </a>
+                        </div>
+                        <div class="blog-info">
+                            <h2>This is Lorem ipsum heading.</h2>
+                            <div class="blog-comment">
+                                <p>Posted In: <span>Legal Advice</span></p>
+                                <p>
+                                    <span><a href="#"><i class="fa fa-comments"></i></a> 15</span>
+                                    <span><a href="#"><i class="fa fa-eye"></i></a> 11</span>
+                                </p>
+                            </div>
+                            <p>
+                                We cannot expect people to have respect for laws and orders until we teach respect to those we have entrusted to
+                                enforce those laws all the time. we always want to help people cordially.
+                            </p>
+                            <a href="" class="read-more">Read more →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="blog-sec">
+                        <div class="blog-img">
+                            <a href="">
+                                <img src="img/blog03.jpg" class="img-responsive">
+                            </a>
+                        </div>
+                        <div class="blog-info">
+                            <h2>This is Lorem ipsum heading.</h2>
+                            <div class="blog-comment">
+                                <p>Posted In: <span>Legal Advice</span></p>
+                                <p>
+                                    <span><a href="#"><i class="fa fa-comments"></i></a> 15</span>
+                                    <span><a href="#"><i class="fa fa-eye"></i></a> 11</span>
+                                </p>
+                            </div>
+                            <p>
+                                We cannot expect people to have respect for laws and orders until we teach respect to those we have entrusted to
+                                enforce those laws all the time. we always want to help people cordially.
+                            </p>
+                            <a href="" class="read-more">Read more →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---->
+    <section id="contact" class="section-padding wow fadeInUp delay-05s">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center white">
+                    <h2 class="service-title pad-bt15">Ponte en contacto con nosotros</h2>
+                    <hr class="bottom-line white-bg">
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="loction-info white">
+                        <p>
+                            <i class="fa fa-map-marker fa-fw pull-left fa-2x"></i>Km. 32.5 Carretera Panamericana Aguascalientes <br> Zacatecas
+                            Pabellón de Arteaga, Aguascalientes, México <br>
+                            Apartado Postal No. 20 // C.P. 20670
+                        </p>
+                        <p><i class="fa fa-envelope-o fa-fw pull-left fa-2x"></i>info@baker.com</p>
+                        <p><i class="fa fa-phone fa-fw pull-left fa-2x"></i>01 800 088 22 22 ext 82536</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="contact-form">
+                        <div id="sendmessage">Your message has been sent. Thank you!</div>
+                        <div id="errormessage"></div>
+                        <form action="" method="post" role="form" class="contactForm">
+                            <div class="col-md-6 padding-right-zero">
+                                <div class="form-group">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                    <div class="validation"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
+                                    <div class="validation"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                                    <div class="validation"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Mensaje"></textarea>
+                                    <div class="validation"></div>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-submit">ENVIAR</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---->
+    <!---->
+    <footer id="footer">
+        <div class="container">
+            <div class="row text-center">
+                <p>&copy; INIFAP.</p>
+                <div class="credits">
+                    Diseñado por <a href="http://clima.inifap.gob.mx/lnmysr/" target="_blank">Laboratorio Nacional de Modelaje y Sensores Remotos.</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!---->
 </div>

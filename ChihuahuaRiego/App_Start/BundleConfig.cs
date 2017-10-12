@@ -32,8 +32,6 @@ namespace ChihuahuaRiego
                       "~/Scripts/bootstrap.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css",
                       "~/Content/jquery.bxslider.css",
                       "~/Content/font-awesome.min.css",
                       "~/Content/bootstrap.min.css",
