@@ -12,9 +12,9 @@ namespace ChihuahuaRiego.Controllers
         // GET: Chart
         public ActionResult Index()
         {
-            DataTable table = DerializeDataTable();
+            //DataTable table = DerializeDataTable();
 
-            /*var items = new List<Riego>();
+            var items = new List<Riego>();
             items.Add(new Riego { Fecha = "20/04/2017", RiegoTipo = 5 });
             items.Add(new Riego { Fecha = "01/05/2017", RiegoTipo = 10 });
             items.Add(new Riego { Fecha = "07/06/2017", RiegoTipo = 20 });
@@ -22,13 +22,11 @@ namespace ChihuahuaRiego.Controllers
             items.Add(new Riego { Fecha = "20/07/2017", RiegoTipo = 20 });
             items.Add(new Riego { Fecha = "01/08/2017", RiegoTipo = 10 });
 
-            //Group the days
-            var fecha = items.GroupBy(o => o.Fecha).Select(o => o.Key).ToList();
+            
+            var dataForChart = items.Select(x => new {names = x.Fecha, y = x.RiegoTipo});
 
-            //Group the data on Tip
-            var tip = items.GroupBy(o => o.RiegoTipo, o => o.Result, (key, g) => new { Name = key, Data = g.ToList() }).ToList();*/
-
-            return View(table);
+            //return Json(dataForChart, JsonRequestBehavior.AllowGet);
+            return View();
         }
 
         public DataTable DerializeDataTable()

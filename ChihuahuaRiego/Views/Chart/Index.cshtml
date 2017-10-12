@@ -13,11 +13,29 @@
         $(function ($) {
             $('#grafica').highcharts({
                 title: { text: 'Grafica de Riego' },
-                xAxis: { categories: ['200', '201', '202'] },
-                yAxis: { title: 'Porcentaje %' }, plotlines: [{ value: 0, width: 1, color: '#808080' }],
+                xAxis: {
+                    categories: ['200',
+                        '201',
+                        '202']
+                },
+                yAxis: { title: 'Porcentaje %' },
+                plotlines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }],
                 tooltip: { valueSuffix: '%' },
-                legend: { layout: 'vertical', align: 'right', verticalAlign: 'middle', borderWidht: 0 },
-                series: [{ name: 'Riego', data: [25, 23, 22] }]
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'middle',
+                    borderWidht: 0
+                },
+                series: [{
+                    name: 'Riego',
+                    data: [25, 23, 22],
+                    color: 'rgb(29,165,52)',
+                }]
             });
         });
     </script>
