@@ -33,7 +33,12 @@ namespace ChihuahuaRiego
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/jquery.bxslider.css",
+                      "~/Content/font-awesome.min.css",
+                      "~/Content/bootstrap.min.css",
+                      "~/Content/animate.css",
+                      "~/Content/style.css"));
         }
     }
 }
