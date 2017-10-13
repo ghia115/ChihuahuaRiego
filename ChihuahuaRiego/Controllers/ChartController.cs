@@ -9,8 +9,12 @@ namespace ChihuahuaRiego.Controllers
 {
     public class ChartController : Controller
     {
-        // GET: Chart
         public ActionResult Index()
+        {
+            return View();
+        }
+        // GET: Chart
+        public ActionResult GetChart()
         {
             //DataTable table = DerializeDataTable();
 
@@ -25,8 +29,8 @@ namespace ChihuahuaRiego.Controllers
             
             var dataForChart = items.Select(x => new {names = x.Fecha, y = x.RiegoTipo});
 
-            //return Json(dataForChart, JsonRequestBehavior.AllowGet);
-            return View();
+            return Json(dataForChart, JsonRequestBehavior.AllowGet);
+            //return View();
         }
 
         public DataTable DerializeDataTable()
