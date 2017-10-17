@@ -4,13 +4,34 @@ using System.Data;
 using ChihuahuaRiego.Models;
 using System.Collections.Generic;
 using System.Linq;
-
+using GraficaRiegoManzanaMaiz.Grafica;
 namespace ChihuahuaRiego.Controllers
 {
     public class ChartController : Controller
     {
-        // GET: Chart
         public ActionResult Index()
+        {
+            return View();
+        }
+        // GET: Chart
+        public ActionResult Grafica()
+        {
+            GraficaRiego obj = new GraficaRiego();
+
+            
+
+            //System.Web.HtmlString s = new System.Web.HtmlString(obj.GraficaDinamica("Prueba"));
+            ViewBag.Grafica = obj.GraficaDinamica("Prueba"); // s.ToHtmlString();
+            return View();
+
+        }
+
+
+
+
+
+
+        public ActionResult GetChart()
         {
             //DataTable table = DerializeDataTable();
 
@@ -25,8 +46,8 @@ namespace ChihuahuaRiego.Controllers
             
             var dataForChart = items.Select(x => new {names = x.Fecha, y = x.RiegoTipo});
 
-            //return Json(dataForChart, JsonRequestBehavior.AllowGet);
-            return View();
+            return Json(dataForChart, JsonRequestBehavior.AllowGet);
+            //return View();
         }
 
         public DataTable DerializeDataTable()
