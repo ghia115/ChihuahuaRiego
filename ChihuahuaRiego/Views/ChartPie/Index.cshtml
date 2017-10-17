@@ -6,80 +6,84 @@
 <div class="container body-content" style="padding-top: 50px;">
     <h2>Index</h2>
     <h4>Display pie chart using Highcharts in Asp.net C#</h4>
-    <button id="btnCreatePieChart">Show </button>
+    <button type="button" id="chartbtn">Ver gráfica</button>
     <br />
     <div>
-        <div id="container" style="width: 500px; height: 500px"></div>
+        <div id="chartArea"></div>
     </div>
 
-    <script>
-        function drawPieChart(seriesData) {
+    @section scripts
+    {
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://code.highcharts.com/highcharts.js"></script>
+        <script src="http://code.highcharts.com/modules/exporting.js"></script>
+        <script>
+            $(document)
+                .ready(function () {
 
-            $('#container').highcharts({
-                chart: {
-                    plotBackgroundColor: null,
-                    plotBorderWidth: null,
-                    plotShadow: false,
-                    type: 'pie'
-                },
-                title: {
-                    text: 'Population percentage city wise'
-                },
-                tooltip: {
-                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-                },
-                plotOptions: {
-                    pie: {
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        dataLabels: {
-                            enabled: true,
-                            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-                            style: {
-                                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                            }
-                        }
-                    }
-                },
-                series: [{
-                    name: "Brands",
-                    colorByPoint: true,
-                    data: seriesData
-                }]
-            });
-        }
+                    $('#chartbtn')
+                        .click(function () {
+                            $.ajax({
+                                type: "GET",
 
-        $("#btnCreatePieChart").on('click', function (e) {
+                                url: '@Url.Action("GetChart")',
 
-            $.ajax({
-                url: '/ChartPie/getRiego',
-                type: 'GET',
-                success: OnSuccess_,
-                error: OnErrorCall_
-            });
+                                dataType: "json",
+                                success: function (data) {
 
-            function OnSuccess_(response) {
-                var aData = response.d;
-                var arr = []
+                                    var series = [
+                                        {
+                                            type: 'line',
+                                            name: '',
+                                            data: data,
+                                            color: 'rgb(29,165,52)'
+                                        }
+                                    ];
 
-                $.map(aData, function (item, index) {
-                    var i = [item.city_name, item.population];
-                    var obj = {};
-                    obj.name = item.city_name;
-                    obj.y = item.population;
-                    arr.push(obj);
+                                    createChart("#chartArea", "Grafica de Riego", series);
+
+                                }
+
+                            });
+                        });
                 });
-                var myJsonString = JSON.stringify(arr);
-                var jsonArray = JSON.parse(JSON.stringify(arr));
 
-                drawPieChart(jsonArray);
+            function createChart(chartContainer, title, series) {
 
+                $(chartContainer)
+                    .highcharts({
+                        chart: {
+                            type: 'line'
+                        },
+                        credits: {
+                            enabled: false
+                        },
+                        exporting: {
+                            enabled: true
+                        },
+                        plotOptions: {
+                            pie: {
+                                allowPointSelect: true,
+                                cursor: 'pointer',
+                                dataLabels: {
+                                    enabled: true,
+                                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                                    style: {
+                                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                                    }
+                                }
+                            }
+                        },
+                        series: series,
+                        title: {
+                            text: title
+                        }
+                    });
             }
-            function OnErrorCall_(response) {
-                alert("Whoops something went wrong!");
-            }
-            e.preventDefault();
-        });
-    </script>
+
+
+        </script>
+    }
+    
     
 </div>

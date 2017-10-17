@@ -16,6 +16,24 @@ namespace ChihuahuaRiego.Controllers
             return View();
         }
 
+        public ActionResult GetChart()
+        {
+            var data = new List<Riego>(){
+                new Riego() { Fecha = "20/04/2017", RiegoTipo = 5 },
+                new Riego() { Fecha = "01/05/2017", RiegoTipo = 10 },
+                new Riego() { Fecha = "07/06/2017", RiegoTipo = 20 },
+                new Riego() { Fecha = "01/07/2017", RiegoTipo = 5 },
+                new Riego() { Fecha = "20/07/2017", RiegoTipo = 20 },
+                new Riego() { Fecha = "01/08/2017", RiegoTipo = 10 }
+            };
+
+            var dataforchart = data.Select(x => new { name = x.Fecha, y = x.RiegoTipo });
+
+            return Json(dataforchart, JsonRequestBehavior.AllowGet);
+        }
+
+
+
         [HttpGet]
         public List<Riego> getRiego()
         {
