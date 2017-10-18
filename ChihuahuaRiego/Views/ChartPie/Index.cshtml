@@ -4,8 +4,7 @@
     Layout = "~/Views/Shared/_LayoutNavbar.cshtml";
 }
 <div class="container body-content" style="padding-top: 50px;">
-    <h2>Index</h2>
-    <h4>Display pie chart using Highcharts in Asp.net C#</h4>
+    <h2>Gráfica</h2>
     <button type="button" id="chartbtn">Ver gráfica</button>
     <br />
     <div>
@@ -52,6 +51,12 @@
 
                 $(chartContainer)
                     .highcharts({
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: 'Riego'
+                            }
+                        },
                         chart: {
                             type: 'line'
                         },

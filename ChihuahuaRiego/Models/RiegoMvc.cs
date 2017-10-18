@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ChihuahuaRiego.Models
 {
-    public class Riego
+    public class RiegoMvc
     {
         public int RiegoTipo { get; set; }
         public string Fecha { get; set; }
